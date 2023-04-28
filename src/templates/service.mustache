@@ -1,0 +1,62 @@
+/**
+ * * notice this file create by nemo
+ * * like it! Give me a star 🌟 https://github.com/pregalaxyer/nemo
+ */
+{{#imports}}
+import {{.}} from '../models/{{.}}'
+{{/imports}}
+import _request from '{{{requestPath}}}'
+
+{{#description}}
+/**
+ * @description {{description}}
+ */
+{{/description}}
+export default class {{name}} {
+  {{#requests}}
+  {{#description}}
+  /**
+   * @description {{description}}
+   */
+  {{/description}}
+  public static {{name}} = async (
+    {{#parameters}}
+    {{>parameters}}
+    {{/parameters}}
+  ){{#responseType}}:Promise<{{{responseType}}}>{{/responseType}} => {
+    const res = await _request{{#responseType}}<{{{responseType}}}>{{/responseType}}(`{{&url}}`, {
+      method: '{{method}}',
+      {{#header.length}}
+      headers: {
+        {{#header}}
+        {{>alias}}
+        {{/header}}
+      },
+      {{/header.length}}
+      {{#body}}
+      {{^alias}}
+      body:{{{name}}},
+      {{/alias}}
+      {{#alias}}
+      body:{{{alias}}},
+      {{/alias}}
+      {{/body}}
+      {{#query.length}}
+      query: {
+      {{#query}}
+        {{>alias}}
+      {{/query}}
+      },
+      {{/query.length}}
+      {{#formData.length}}
+      formData: {
+      {{#formData}}
+        {{>alias}}
+      {{/formData}}
+      },
+      {{/formData.length}}
+    })
+    return res
+  }
+  {{/requests}}
+}

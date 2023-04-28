@@ -1,0 +1,16 @@
+mustache:
+  ☐ delete query\format property, when it contains zero items (service.mustache)
+
+fileTests:
+  ☐ should test files render, how to test node files functions?
+
+bin:
+  ☐ create a terminal tool
+
+one api:
+  ☐ exports for one api
+
+
+rm folder:
+  ☐ only remove sub folder
+

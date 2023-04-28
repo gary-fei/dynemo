@@ -1,0 +1,27 @@
+/**
+ * * notice this file create by nemo
+ * * like it! Give me a star 🌟 https://github.com/pregalaxyer/nemo
+ */
+{{#imports}}
+import {{.}} from './{{.}}'
+{{/imports}}
+/**
+ * @description {{description}}
+ */
+{{#useType}}
+type {{name}} = {{#types}}{{&type}}{{/types}}
+export default {{name}}
+{{/useType}}
+{{^useType}}
+export default interface {{name}}{{#extends}} extends {{extends}}{{/extends}} {
+  {{#types}}
+  {{#description}}
+  /**
+   * @description {{description}}
+   */
+  {{/description}}
+  {{name}}{{#isOption}}?{{/isOption}}: {{&type}}
+  {{/types}}
+}
+{{/useType}}
+

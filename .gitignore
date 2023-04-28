@@ -1,0 +1,11 @@
+dist
+node_modules
+.history
+api
+.test_folder
+*.log
+coverage
+lib
+tests/.output
+esm
+bin/.output

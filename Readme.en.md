@@ -1,8 +1,9 @@
 
-[English](Readme.en.md)
+[简体中文](Readme.zh.md)
 
 <h1 style="text-align: center">nemo🐠</h1>
-<div style="text-align: center">
+
+<div  style="text-align: center">
 <img src="https://img.shields.io/npm/v/@pregalaxyer/nemo?color=%23&style=plastic" />
 <img src="https://img.shields.io/npm/l/@pregalaxyer/nemo" />
 <img src="https://img.shields.io/github/workflow/status/pregalaxyer/nemo/Pull%20Request"/>
@@ -10,33 +11,31 @@
 <img src="https://img.shields.io/npm/dm/@pregalaxyer/nemo?style=plastic">
 <img src="https://img.shields.io/badge/pkg--manage-pnpm-orange">
 </div>
-<p style="text-align: center"> 
-一个自动化生成 <code>swagger typescript</code> 文件的💪工具，基于 <code>swagger V2</code>
-</p>
+
+<p  style="text-align: center"> a 💪 typescript generator 🔨 for swagger resultful api, based on swagger v2 </p>
 
 
-## 安装
+
+
+## Install
 
 ```node
   npm install @pregalaxyer/nemo
   // or
   yarn add @pregalaxyer/nemo
   // install global
-  npm i -g @pregalaxyer/nemo
-
+  npm install @pregalaxyer/nemo -g
 ```
 
-
-
-## 用法
-
-### 参数:
+## Example
+excute the file below, your will get your swagger typescript files.
+<b>options</b>:
   
-  1. `url`: `swagger` 项目的 `api json` 地址
-  2. `output`: `typescript` 文件的输出目录
-  3. `requestPath`: 第三方请求库，如果需要自定义请求
-  4. `exportsRequest`: 是否需要再次输出请求目录
-  5. `paths`: 路径，用于输出制定路径的文件
+  1. `url`: your resultful swagger json url
+  2. `output`: the folder for your swagger typescript files
+  3. `requestPath`: customer request, such as `axios`, `umi-request` or file path
+  4. `exportsRequest`: the options for your to decide wether create request folder, always happened when you want save local fetch changes
+  5. `paths`: exports by paths filter
 
 ```typescript
 
@@ -65,9 +64,8 @@ interface SwaggerConfig {
   exportsRequest?: boolean
 }
 ```
-在项目中新建一个 `swagger.js` 文件，复制一下代码，然后 `node swagger.js`，脚本会自动生成 `models`、`services` 目录和一个导出文件
+`swagger.js`
 ```node
-// swagger.js
 const main = require('@pregalaxyer/nemo')
 
 // with esm
@@ -79,7 +77,8 @@ main({
 })
 
 ```
-**终端调用**
+
+**Terminal Bash**
 
 ``` bash
 @pregalaxyer/nemo convert -i https://petstore.swagger.io/v2/swagger.json -o ./src/api
@@ -88,8 +87,8 @@ npx @pregalaxyer/nemo convert -i https://petstore.swagger.io/v2/swagger.json -o 
 
 ```
 
-### 自定义请求库
-开箱即用：只需要两分钟即可接入第三方库，你需要大概了解入参的 `interface` ，然后书写转换一个简易转换函数
+## Change request library
+It easy for you to use other request library. Example:
 
 ```typescript
 type RequestInitWithoutBodyInit = Omit<RequestInit, 'body'>
@@ -106,12 +105,20 @@ request<ResponseType>(url: string, options: Options)
 // your request file
 import request from `${library}`
 import { getRequestBody, Options  } from `${output}/utils`
-// 你的转换函数
+
 export default async function <T>(url, options) {
   const body: BodyInit | undefined = getRequestBody(options)
   const data = await request<T>(url, Object.assign(options, {body}))
   return data
 }
 ```
+
+
+
+
+
+
+## TODO
+- [ ] swagger v3 support
 
 
