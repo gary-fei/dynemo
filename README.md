@@ -1,19 +1,17 @@
 
-[English](Readme.en.md)
-
 <h1 style="text-align: center">nemo🐠</h1>
 <div style="text-align: center">
-<img src="https://img.shields.io/npm/v/@pregalaxyer/nemo?color=%23&style=plastic" />
-<img src="https://img.shields.io/npm/l/@pregalaxyer/nemo" />
+<img src="https://img.shields.io/npm/v/dynemo?color=%23&style=plastic" />
+<img src="https://img.shields.io/npm/l/dynemo" />
 <img src="https://img.shields.io/github/workflow/status/pregalaxyer/nemo/Pull%20Request"/>
 <img src="https://img.shields.io/codecov/c/github/pregalaxyer/nemo?style=plastic"/>
-<img src="https://img.shields.io/npm/dm/@pregalaxyer/nemo?style=plastic">
+<img src="https://img.shields.io/npm/dm/dynemo?style=plastic">
 <img src="https://img.shields.io/badge/pkg--manage-pnpm-orange">
 </div>
 <p style="text-align: center"> 
-一个自动化生成 <code>swagger typescript</code> 文件的💪工具，基于 <code>swagger V2</code>, init to dylan
+一个自动化生成 <code>swagger typescript</code> 文件的工具，基于 <code>swagger V2</code>,
 </p>
-
+[swagger-js-codegen](https://github.com/wcandillon/swagger-js-codegen)
 
 ## 安装
 
