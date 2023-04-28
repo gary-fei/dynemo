@@ -11,18 +11,18 @@
 <img src="https://img.shields.io/badge/pkg--manage-pnpm-orange">
 </div>
 <p style="text-align: center"> 
-一个自动化生成 <code>swagger typescript</code> 文件的💪工具，基于 <code>swagger V2</code>
+一个自动化生成 <code>swagger typescript</code> 文件的💪工具，基于 <code>swagger V2</code>, init to dylan
 </p>
 
 
 ## 安装
 
 ```node
-  npm install @pregalaxyer/nemo
+  npm install dynemo
   // or
-  yarn add @pregalaxyer/nemo
+  yarn add dynemo
   // install global
-  npm i -g @pregalaxyer/nemo
+  npm i -g dynemo
 
 ```
 
@@ -68,10 +68,10 @@ interface SwaggerConfig {
 在项目中新建一个 `swagger.js` 文件，复制一下代码，然后 `node swagger.js`，脚本会自动生成 `models`、`services` 目录和一个导出文件
 ```node
 // swagger.js
-const main = require('@pregalaxyer/nemo')
+const main = require('dynemo')
 
 // with esm
-import main from '@pregalaxyer/nemo'
+import main from 'dynemo'
 
 main({
   url: 'https://petstore.swagger.io/v2/swagger.json',
@@ -82,9 +82,9 @@ main({
 **终端调用**
 
 ``` bash
-@pregalaxyer/nemo convert -i https://petstore.swagger.io/v2/swagger.json -o ./src/api
+dynemo convert -i https://petstore.swagger.io/v2/swagger.json -o ./src/api
 # or after install global
-npx @pregalaxyer/nemo convert -i https://petstore.swagger.io/v2/swagger.json -o ./src/api
+npx dynemo convert -i https://petstore.swagger.io/v2/swagger.json -o ./src/api
 
 ```
 
