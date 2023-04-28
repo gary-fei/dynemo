@@ -11,10 +11,8 @@
 <p style="text-align: center"> 
 一个自动化生成 <code>swagger typescript</code> 文件的工具，基于 <code>swagger V2</code>,
 </p>
-[swagger-js-codegen](https://github.com/wcandillon/swagger-js-codegen)
 
 ## 安装
-
 ```node
   npm install dynemo
   // or
@@ -112,4 +110,5 @@ export default async function <T>(url, options) {
 }
 ```
 
-
+## 其他
+[swagger-js-codegen](https://github.com/wcandillon/swagger-js-codegen)
